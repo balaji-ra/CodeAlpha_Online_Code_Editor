@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.top-pane {
+	/* background color set to dark shade of editor color */
+	background-color: hsl(255, 6%, 25%);
+}
+
+.pane {
+	height: 50vh;
+	width: 100vw;
+	display: flex;
+}
+
+.Editor-container {
+	flex-grow: 1; /* editor takes entire screen space horizontally*/
+	flex-basis: 0; /* all editor box of same size */
+	display: flex; /* we have to write code from top to bottom */
+	flex-direction: column; /* hence we set flex direction to column*/
+	padding: 0.5rem; /* adding padding around the each language editor */
+	background-color: hsl(255, 6%, 25%);
+}
+
+.Editor-title {
+	color: whitesmoke;
+	padding: 0.5rem 0.5rem 0.5rem 1rem; /* padding around everything */
+	display: flex;
+	justify-content: space-between; /* pushing the text to far left and button to the extreme right */
+	background-color: hsl(
+		255,
+		6%,
+		15%
+	); /* setting background to darker shade of background color*/
+	border-top-right-radius: 0.5rem; /* rounded top border of text editor*/
+	border-top-left-radius: 0.5rem;
+}
+
+.CodeMirror {
+	height: 100% !important; /* editor fills the entire screen when chrome is zoomed in and out */
+}
+
+.code-mirror-wrapper {
+	flex-grow: 1;
+	border-bottom-right-radius: 0.5rem; /* rounded bottom border of text editor*/
+	border-bottom-left-radius: 0.5rem;
+	overflow: hidden; /* overflow of text in editor remains hidden */
+}
+
+.Editor-container.collapsed {
+	flex-grow: 0;
+}
+
+.Editor-container.collapsed .CodeMirror-scroll {
+	position: absolute;
+	overflow: hidden !important;
+}
+
+.expand-collapse-btn {
+	cursor: pointer;
+	margin-left: 0.5rem;
+}
+
+/* annotation */
+
+.bottom-pane {
+	position: relative;
+}
+
+.annotation-container {
+	letter-spacing: 2px;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-size: 1.1rem;
+	padding: 0rem 2rem;
+	height: fit-content;
+	font-weight: 600;
+	background: #1f2023;
+	text-align: center;
+	border-bottom-left-radius: 0.6rem;
+	border-bottom-right-radius: 0.6rem;
+	display: block;
+	margin: 0 auto;
+}
+
+.annotation-container span {
+	color: #fa1919;
+	font-size: 1.8rem;
+}
+
+.annotation-container a {
+	color: white;
+	text-decoration: none;
+	margin-left: 0.4rem;
+	transition: opacity 250ms linear;
+}
+
+.annotation-container a:hover {
+	opacity: 0.8;
+}
